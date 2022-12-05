@@ -4,6 +4,31 @@
   
   
   <entry>
+    <title>图的最小生成树Prim算法</title>
+    <link href="/super_zhu/2022/12/05/%E5%9B%BE%E7%9A%84%E6%9C%80%E5%B0%8F%E7%94%9F%E6%88%90%E6%A0%91Prim%E7%AE%97%E6%B3%95/"/>
+    <url>/super_zhu/2022/12/05/%E5%9B%BE%E7%9A%84%E6%9C%80%E5%B0%8F%E7%94%9F%E6%88%90%E6%A0%91Prim%E7%AE%97%E6%B3%95/</url>
+    
+    <content type="html"><![CDATA[<h1 id="图的最小生成树Prim算法"><a href="#图的最小生成树Prim算法" class="headerlink" title="图的最小生成树Prim算法"></a>图的最小生成树Prim算法</h1><h2 id="什么是最小生成树"><a href="#什么是最小生成树" class="headerlink" title="什么是最小生成树"></a>什么是最小生成树</h2><p>最小生成树按通俗点来说就是图的一个子图，但不同的是这个图包含有<strong>原图的全部节点</strong>，但<strong>边的权值之和就尽量小</strong></p><p>如果是非带权图那么他只有生成树并没有最小生树，如图</p><p><img src="https://pic3.zhimg.com/v2-a89c87ebaf244377c48db2516df35096_r.jpg"></p><p>但最小生成树应该是这样子的</p><p><img src="https://pic1.zhimg.com/v2-b0b4cf080ce7b65c245bf5360fd576dc_r.jpg"></p><p>包含全部顶点但边的权值最小</p><p><strong>不管是生成树还是最小生成树都不允许图中有环路 ！ ！ ！</strong></p><h2 id="普里姆算法-prim算法"><a href="#普里姆算法-prim算法" class="headerlink" title="普里姆算法-prim算法"></a>普里姆算法-prim算法</h2><blockquote><p>Prim算法就是图的最小生成树算法之一，Prim 算法是一种求解加权无向连通图的 MST 问题的贪心算法。它能找出一个边的子集，使得其构成的树包含图中所有顶点，且边的权值之和最小。</p><p>Prim算法以图的顶点为基础，从首个初始顶点，寻找到达其他顶点权值最小的边，并把该顶点加入到“已到达顶点”的集合中，此时，这个集合就是这个图的最小生成树</p></blockquote><p>prim算法的使用要点：</p><ul><li>使用一个一维数组记录节点</li><li>节点上的值是是父节点的序号，而下标的值是代表这个节点的序号</li><li>第一个节点总是作为根节点（即序号为0的节点），因为没有父节点其值为-1</li></ul><p>如有下图那么一个图</p><p>首先根节点进入数组，其值为-1</p><p><img src="https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/8920d6711607407c961754d1ca3b9d97~tplv-k3u1fbpfcp-zoom-in-crop-mark:4536:0:0:0.image"></p><p>此时从根节点出发寻找权值最小的边，及其到达的节点，发现和节点2的边的权值更小，将其加入数组中,因为其父节点是根节点，所以值是根节点的下标，值为自己的序号</p><p><img src="https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/862111f392b247299909702cdeba74bd~tplv-k3u1fbpfcp-zoom-in-crop-mark:4536:0:0:0.image"></p><p>在从数组中已经加入的所有节点出发发现2和4的节点的边的权值最小</p><p><img src="https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/177ba1da1b1d430f895cc26be81b4c37~tplv-k3u1fbpfcp-zoom-in-crop-mark:4536:0:0:0.image" alt="Prim-Unit-6.png"></p><p>以此循环往复</p><p><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/55be2db34beb412a8941dac7d00b409c~tplv-k3u1fbpfcp-zoom-in-crop-mark:4536:0:0:0.image"><img src="https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/f24ce28542f541139b39a8634384d9d3~tplv-k3u1fbpfcp-zoom-in-crop-mark:4536:0:0:0.image"></p><p>此时全部顶点已经进入数组，数组就是这个图的最小生成树</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>算法</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>数据结构</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>子网内的数据截获</title>
     <link href="/super_zhu/2022/12/04/%E5%AD%90%E7%BD%91%E5%86%85%E7%9A%84%E6%95%B0%E6%8D%AE%E6%88%AA%E8%8E%B7/"/>
     <url>/super_zhu/2022/12/04/%E5%AD%90%E7%BD%91%E5%86%85%E7%9A%84%E6%95%B0%E6%8D%AE%E6%88%AA%E8%8E%B7/</url>

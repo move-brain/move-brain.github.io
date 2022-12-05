@@ -16,29 +16,32 @@
   <meta name="author" content="super_zhu">
   <meta name="keywords" content="">
   
-    <meta name="description" content="子网内的数据截获我们先让电脑和手机在同一子网内，即同一网段 打开wireshark，输入过滤条件ip.src&#x3D;&#x3D;手机ip  然后发送一张图片  找到图片数据，然后选择追踪数据流，选择原始数据，然后保存后缀改为jpg  使用winhex打开图片  jpg文件的数据头是FF D8，删除前面的数据再保存，此时就可以得到截获的图片 ****">
+    <meta name="description" content="图的最小生成树Prim算法什么是最小生成树最小生成树按通俗点来说就是图的一个子图，但不同的是这个图包含有原图的全部节点，但边的权值之和就尽量小 如果是非带权图那么他只有生成树并没有最小生树，如图  但最小生成树应该是这样子的  包含全部顶点但边的权值最小 不管是生成树还是最小生成树都不允许图中有环路 ！ ！ ！ 普里姆算法-prim算法 Prim算法就是图的最小生成树算法之一，Prim 算法是一种">
 <meta property="og:type" content="article">
-<meta property="og:title" content="子网内的数据截获">
-<meta property="og:url" content="http://move-brain.github.io/super_zhu/2022/12/04/%E5%AD%90%E7%BD%91%E5%86%85%E7%9A%84%E6%95%B0%E6%8D%AE%E6%88%AA%E8%8E%B7/index.html">
+<meta property="og:title" content="图的最小生成树Prim算法">
+<meta property="og:url" content="http://move-brain.github.io/super_zhu/2022/12/05/%E5%9B%BE%E7%9A%84%E6%9C%80%E5%B0%8F%E7%94%9F%E6%88%90%E6%A0%91Prim%E7%AE%97%E6%B3%95/index.html">
 <meta property="og:site_name" content="zhu_brain">
-<meta property="og:description" content="子网内的数据截获我们先让电脑和手机在同一子网内，即同一网段 打开wireshark，输入过滤条件ip.src&#x3D;&#x3D;手机ip  然后发送一张图片  找到图片数据，然后选择追踪数据流，选择原始数据，然后保存后缀改为jpg  使用winhex打开图片  jpg文件的数据头是FF D8，删除前面的数据再保存，此时就可以得到截获的图片 ****">
+<meta property="og:description" content="图的最小生成树Prim算法什么是最小生成树最小生成树按通俗点来说就是图的一个子图，但不同的是这个图包含有原图的全部节点，但边的权值之和就尽量小 如果是非带权图那么他只有生成树并没有最小生树，如图  但最小生成树应该是这样子的  包含全部顶点但边的权值最小 不管是生成树还是最小生成树都不允许图中有环路 ！ ！ ！ 普里姆算法-prim算法 Prim算法就是图的最小生成树算法之一，Prim 算法是一种">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://s2.loli.net/2022/12/04/DjbQVcyZSX2AF17.png">
-<meta property="og:image" content="https://s2.loli.net/2022/12/04/6rpZ5D7iRsyQGhB.png">
-<meta property="og:image" content="https://s2.loli.net/2022/12/04/5RKYgO1iXT9Vh82.png">
-<meta property="og:image" content="https://s2.loli.net/2022/12/04/bnGAeYj3laUgrVc.png">
-<meta property="article:published_time" content="2022-12-04T09:32:54.927Z">
-<meta property="article:modified_time" content="2022-12-04T09:56:55.121Z">
+<meta property="og:image" content="https://pic3.zhimg.com/v2-a89c87ebaf244377c48db2516df35096_r.jpg">
+<meta property="og:image" content="https://pic1.zhimg.com/v2-b0b4cf080ce7b65c245bf5360fd576dc_r.jpg">
+<meta property="og:image" content="https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/8920d6711607407c961754d1ca3b9d97~tplv-k3u1fbpfcp-zoom-in-crop-mark:4536:0:0:0.image">
+<meta property="og:image" content="https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/862111f392b247299909702cdeba74bd~tplv-k3u1fbpfcp-zoom-in-crop-mark:4536:0:0:0.image">
+<meta property="og:image" content="https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/177ba1da1b1d430f895cc26be81b4c37~tplv-k3u1fbpfcp-zoom-in-crop-mark:4536:0:0:0.image">
+<meta property="og:image" content="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/55be2db34beb412a8941dac7d00b409c~tplv-k3u1fbpfcp-zoom-in-crop-mark:4536:0:0:0.image">
+<meta property="og:image" content="https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/f24ce28542f541139b39a8634384d9d3~tplv-k3u1fbpfcp-zoom-in-crop-mark:4536:0:0:0.image">
+<meta property="article:published_time" content="2022-12-05T06:55:30.185Z">
+<meta property="article:modified_time" content="2022-12-05T06:59:21.266Z">
 <meta property="article:author" content="super_zhu">
-<meta property="article:tag" content="渗透作业">
+<meta property="article:tag" content="数据结构">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://s2.loli.net/2022/12/04/DjbQVcyZSX2AF17.png">
+<meta name="twitter:image" content="https://pic3.zhimg.com/v2-a89c87ebaf244377c48db2516df35096_r.jpg">
   
   
     <meta name="referrer" content="no-referrer-when-downgrade">
   
   
-  <title>子网内的数据截获 - zhu_brain</title>
+  <title>图的最小生成树Prim算法 - zhu_brain</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -203,7 +206,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="子网内的数据截获"></span>
+            <span id="subtitle" data-typed-text="图的最小生成树Prim算法"></span>
           
         </div>
 
@@ -214,8 +217,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2022-12-04 17:32" pubdate>
-          2022年12月4日 下午
+        <time datetime="2022-12-05 14:55" pubdate>
+          2022年12月5日 下午
         </time>
       </span>
     
@@ -226,7 +229,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          166 字
+          573 字
         
       </span>
     
@@ -237,7 +240,7 @@
         
         
         
-          2 分钟
+          5 分钟
         
       </span>
     
@@ -275,20 +278,38 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">子网内的数据截获</h1>
+            <h1 style="display: none">图的最小生成树Prim算法</h1>
             
             
               <div class="markdown-body">
                 
-                <h1 id="子网内的数据截获"><a href="#子网内的数据截获" class="headerlink" title="子网内的数据截获"></a>子网内的数据截获</h1><p>我们先让电脑和手机在同一子网内，即同一网段</p>
-<p>打开wireshark，输入过滤条件ip.src&#x3D;&#x3D;手机ip  然后发送一张图片</p>
-<p><img src="https://s2.loli.net/2022/12/04/DjbQVcyZSX2AF17.png" srcset="/img/loading.gif" lazyload></p>
-<p>找到图片数据，然后选择追踪数据流，选择原始数据，然后保存后缀改为jpg</p>
-<p><img src="https://s2.loli.net/2022/12/04/6rpZ5D7iRsyQGhB.png" srcset="/img/loading.gif" lazyload></p>
-<p>使用winhex打开图片</p>
-<p><img src="https://s2.loli.net/2022/12/04/5RKYgO1iXT9Vh82.png" srcset="/img/loading.gif" lazyload></p>
-<p>jpg文件的数据头是FF D8，删除前面的数据再保存，此时就可以得到截获的图片</p>
-<p><img src="https://s2.loli.net/2022/12/04/bnGAeYj3laUgrVc.png" srcset="/img/loading.gif" lazyload>****</p>
+                <h1 id="图的最小生成树Prim算法"><a href="#图的最小生成树Prim算法" class="headerlink" title="图的最小生成树Prim算法"></a>图的最小生成树Prim算法</h1><h2 id="什么是最小生成树"><a href="#什么是最小生成树" class="headerlink" title="什么是最小生成树"></a>什么是最小生成树</h2><p>最小生成树按通俗点来说就是图的一个子图，但不同的是这个图包含有<strong>原图的全部节点</strong>，但<strong>边的权值之和就尽量小</strong></p>
+<p>如果是非带权图那么他只有生成树并没有最小生树，如图</p>
+<p><img src="https://pic3.zhimg.com/v2-a89c87ebaf244377c48db2516df35096_r.jpg" srcset="/img/loading.gif" lazyload></p>
+<p>但最小生成树应该是这样子的</p>
+<p><img src="https://pic1.zhimg.com/v2-b0b4cf080ce7b65c245bf5360fd576dc_r.jpg" srcset="/img/loading.gif" lazyload></p>
+<p>包含全部顶点但边的权值最小</p>
+<p><strong>不管是生成树还是最小生成树都不允许图中有环路 ！ ！ ！</strong></p>
+<h2 id="普里姆算法-prim算法"><a href="#普里姆算法-prim算法" class="headerlink" title="普里姆算法-prim算法"></a>普里姆算法-prim算法</h2><blockquote>
+<p>Prim算法就是图的最小生成树算法之一，Prim 算法是一种求解加权无向连通图的 MST 问题的贪心算法。它能找出一个边的子集，使得其构成的树包含图中所有顶点，且边的权值之和最小。</p>
+<p>Prim算法以图的顶点为基础，从首个初始顶点，寻找到达其他顶点权值最小的边，并把该顶点加入到“已到达顶点”的集合中，此时，这个集合就是这个图的最小生成树</p>
+</blockquote>
+<p>prim算法的使用要点：</p>
+<ul>
+<li>使用一个一维数组记录节点</li>
+<li>节点上的值是是父节点的序号，而下标的值是代表这个节点的序号</li>
+<li>第一个节点总是作为根节点（即序号为0的节点），因为没有父节点其值为-1</li>
+</ul>
+<p>如有下图那么一个图</p>
+<p>首先根节点进入数组，其值为-1</p>
+<p><img src="https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/8920d6711607407c961754d1ca3b9d97~tplv-k3u1fbpfcp-zoom-in-crop-mark:4536:0:0:0.image" srcset="/img/loading.gif" lazyload></p>
+<p>此时从根节点出发寻找权值最小的边，及其到达的节点，发现和节点2的边的权值更小，将其加入数组中,因为其父节点是根节点，所以值是根节点的下标，值为自己的序号</p>
+<p><img src="https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/862111f392b247299909702cdeba74bd~tplv-k3u1fbpfcp-zoom-in-crop-mark:4536:0:0:0.image" srcset="/img/loading.gif" lazyload></p>
+<p>在从数组中已经加入的所有节点出发发现2和4的节点的边的权值最小</p>
+<p><img src="https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/177ba1da1b1d430f895cc26be81b4c37~tplv-k3u1fbpfcp-zoom-in-crop-mark:4536:0:0:0.image" srcset="/img/loading.gif" lazyload alt="Prim-Unit-6.png"></p>
+<p>以此循环往复</p>
+<p><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/55be2db34beb412a8941dac7d00b409c~tplv-k3u1fbpfcp-zoom-in-crop-mark:4536:0:0:0.image" srcset="/img/loading.gif" lazyload><img src="https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/f24ce28542f541139b39a8634384d9d3~tplv-k3u1fbpfcp-zoom-in-crop-mark:4536:0:0:0.image" srcset="/img/loading.gif" lazyload></p>
+<p>此时全部顶点已经进入数组，数组就是这个图的最小生成树</p>
 
                 
               </div>
@@ -307,7 +328,7 @@
     
       <span class="category-chain">
         
-  <a href="/categories/%E7%BD%91%E7%BB%9C%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/" class="category-chain-item">网络渗透测试</a>
+  <a href="/categories/%E7%AE%97%E6%B3%95/" class="category-chain-item">算法</a>
   
   
 
@@ -322,7 +343,7 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/%E6%B8%97%E9%80%8F%E4%BD%9C%E4%B8%9A/">#渗透作业</a>
+        <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">#数据结构</a>
       
     </div>
   
@@ -334,8 +355,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>子网内的数据截获</div>
-      <div>http://move-brain.github.io/super_zhu/2022/12/04/子网内的数据截获/</div>
+      <div>图的最小生成树Prim算法</div>
+      <div>http://move-brain.github.io/super_zhu/2022/12/05/图的最小生成树Prim算法/</div>
     </div>
     <div class="license-meta">
       
@@ -347,7 +368,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2022年12月4日</div>
+          <div>2022年12月5日</div>
         </div>
       
       
@@ -379,18 +400,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/super_zhu/2022/12/05/%E5%9B%BE%E7%9A%84%E6%9C%80%E5%B0%8F%E7%94%9F%E6%88%90%E6%A0%91Prim%E7%AE%97%E6%B3%95/" title="图的最小生成树Prim算法">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">图的最小生成树Prim算法</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/super_zhu/2022/11/26/%E4%B8%80%E4%B8%AA%E5%A5%BD%E7%8E%A9%E7%9A%84%E7%AD%BE%E5%88%B0%E6%89%93%E5%8D%B0/" title="一个好玩的签到打印">
-                        <span class="hidden-mobile">一个好玩的签到打印</span>
+                      <a href="/super_zhu/2022/12/04/%E5%AD%90%E7%BD%91%E5%86%85%E7%9A%84%E6%95%B0%E6%8D%AE%E6%88%AA%E8%8E%B7/" title="子网内的数据截获">
+                        <span class="hidden-mobile">子网内的数据截获</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
