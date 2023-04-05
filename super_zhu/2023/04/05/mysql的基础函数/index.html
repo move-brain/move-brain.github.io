@@ -16,26 +16,44 @@
   <meta name="author" content="super_zhu">
   <meta name="keywords" content="vue,ubuntu,mysql">
   
-    <meta name="description" content="vue3-全局事件的使用前言对于全局事件总线，它是一种组件间通信的方式，可以让任意组件进行通信 它就相当于一个中间介质可以让组件通信，可以理解为他就是一个上帝，不参与组件，只负责通信 如下图  安装 vue3推荐使用mitt 安装mitt1npm install mitt  mitt引入全局引入在main.js文件 1234import mitt from &quot;mitt&quot;cons">
+    <meta name="description" content="mysql基础函数字符串函数 ​              lpad对于int类型的数据不起效果因为int不显示前面的零 数组函数  mod是取余的意思 日期函数 比如 select date_add(now(),interval 70 day) 约束普通约束 age int check(age&gt;0&amp;&amp;age&lt;&#x3D;120)   check这个约束是这样用，代表年">
 <meta property="og:type" content="article">
-<meta property="og:title" content="vue3-全局事件的使用">
-<meta property="og:url" content="http://move-brain.github.io/super_zhu/2023/04/04/vue3-%E5%85%A8%E5%B1%80%E4%BA%8B%E4%BB%B6%E7%9A%84%E4%BD%BF%E7%94%A8/index.html">
+<meta property="og:title" content="mysql的基础函数">
+<meta property="og:url" content="http://move-brain.github.io/super_zhu/2023/04/05/mysql%E7%9A%84%E5%9F%BA%E7%A1%80%E5%87%BD%E6%95%B0/index.html">
 <meta property="og:site_name" content="blogs">
-<meta property="og:description" content="vue3-全局事件的使用前言对于全局事件总线，它是一种组件间通信的方式，可以让任意组件进行通信 它就相当于一个中间介质可以让组件通信，可以理解为他就是一个上帝，不参与组件，只负责通信 如下图  安装 vue3推荐使用mitt 安装mitt1npm install mitt  mitt引入全局引入在main.js文件 1234import mitt from &quot;mitt&quot;cons">
+<meta property="og:description" content="mysql基础函数字符串函数 ​              lpad对于int类型的数据不起效果因为int不显示前面的零 数组函数  mod是取余的意思 日期函数 比如 select date_add(now(),interval 70 day) 约束普通约束 age int check(age&gt;0&amp;&amp;age&lt;&#x3D;120)   check这个约束是这样用，代表年">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/28a918da2c7841a8baced67fc46ff24e~tplv-k3u1fbpfcp-zoom-in-crop-mark:4536:0:0:0.awebp">
-<meta property="article:published_time" content="2023-04-04T14:02:31.787Z">
-<meta property="article:modified_time" content="2023-04-04T14:35:39.905Z">
+<meta property="og:image" content="https://s2.loli.net/2023/04/05/KqsLbmhOlB7vpHt.png">
+<meta property="og:image" content="https://s2.loli.net/2023/04/05/EmA48zUTyrwODsS.png">
+<meta property="og:image" content="https://s2.loli.net/2023/04/05/Zi2QG1t5EUmYcsO.png">
+<meta property="og:image" content="https://s2.loli.net/2023/04/05/YmQq6HKJa95vIVF.png">
+<meta property="og:image" content="https://s2.loli.net/2023/04/05/qUXdzQtPxpf7SVi.png">
+<meta property="og:image" content="https://s2.loli.net/2023/04/05/V6aMr7zxCnkFUJi.png">
+<meta property="og:image" content="https://s2.loli.net/2023/04/05/kWhvLiSuJ5aq6dI.png">
+<meta property="og:image" content="https://s2.loli.net/2023/04/05/v34qLnGjWe8YySw.png">
+<meta property="og:image" content="https://s2.loli.net/2023/04/05/cIpbLHVgRmxJX3n.png">
+<meta property="og:image" content="https://s2.loli.net/2023/04/05/kz58dG2FrqweZxM.png">
+<meta property="og:image" content="https://s2.loli.net/2023/04/05/odPzfsupJQ3DWHA.png">
+<meta property="og:image" content="https://s2.loli.net/2023/04/05/gsqDZlzCtnrdIiu.png">
+<meta property="og:image" content="https://s2.loli.net/2023/04/05/ShvzUH3EW2FrDiO.png">
+<meta property="og:image" content="https://s2.loli.net/2023/04/05/7HsJfgApSUK6Cvi.png">
+<meta property="og:image" content="https://s2.loli.net/2023/04/05/CuxB7XNvEA3r6Fs.png">
+<meta property="og:image" content="https://s2.loli.net/2023/04/05/T19CxdDNGbqhXZW.png">
+<meta property="og:image" content="https://s2.loli.net/2023/04/05/A1U8iOgaBEY5Nxz.png">
+<meta property="og:image" content="http://move-brain.github.io/mysql%E7%9A%84%E5%9F%BA%E7%A1%80%E5%87%BD%E6%95%B0.assets/image-20230405124449153.png">
+<meta property="og:image" content="https://s2.loli.net/2023/04/05/CyQrwIN5jnGhpA8.png">
+<meta property="article:published_time" content="2023-04-05T04:36:10.418Z">
+<meta property="article:modified_time" content="2023-04-05T04:47:25.500Z">
 <meta property="article:author" content="super_zhu">
-<meta property="article:tag" content="vue">
+<meta property="article:tag" content="mysql">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/28a918da2c7841a8baced67fc46ff24e~tplv-k3u1fbpfcp-zoom-in-crop-mark:4536:0:0:0.awebp">
+<meta name="twitter:image" content="https://s2.loli.net/2023/04/05/KqsLbmhOlB7vpHt.png">
   
   
     <meta name="referrer" content="no-referrer-when-downgrade">
   
   
-  <title>vue3-全局事件的使用 - blogs</title>
+  <title>mysql的基础函数 - blogs</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -188,7 +206,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="vue3-全局事件的使用"></span>
+            <span id="subtitle" data-typed-text="mysql的基础函数"></span>
           
         </div>
 
@@ -199,8 +217,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2023-04-04 22:02" pubdate>
-          2023年4月4日 晚上
+        <time datetime="2023-04-05 12:36" pubdate>
+          2023年4月5日 下午
         </time>
       </span>
     
@@ -211,7 +229,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          1.6k 字
+          1.4k 字
         
       </span>
     
@@ -222,7 +240,7 @@
         
         
         
-          14 分钟
+          12 分钟
         
       </span>
     
@@ -260,43 +278,69 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">vue3-全局事件的使用</h1>
+            <h1 style="display: none">mysql的基础函数</h1>
             
             
               <div class="markdown-body">
                 
-                <h1 id="vue3-全局事件的使用"><a href="#vue3-全局事件的使用" class="headerlink" title="vue3-全局事件的使用"></a>vue3-全局事件的使用</h1><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p><strong>对于全局事件总线，它是一种组件间通信的方式，可以让任意组件进行通信</strong></p>
-<p>它就相当于一个中间介质可以让组件通信，可以理解为他就是一个上帝，不参与组件，只负责通信</p>
-<p>如下图</p>
-<p><img src="https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/28a918da2c7841a8baced67fc46ff24e~tplv-k3u1fbpfcp-zoom-in-crop-mark:4536:0:0:0.awebp" srcset="/img/loading.gif" lazyload></p>
-<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p> vue3推荐使用mitt</p>
-<h3 id="安装mitt"><a href="#安装mitt" class="headerlink" title="安装mitt"></a>安装mitt</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">npm install mitt<br></code></pre></td></tr></table></figure>
-
-<h3 id="mitt引入"><a href="#mitt引入" class="headerlink" title="mitt引入"></a>mitt引入</h3><h4 id="全局引入"><a href="#全局引入" class="headerlink" title="全局引入"></a>全局引入</h4><p>在main.js文件</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">import</span> mitt <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;mitt&quot;</span><br><span class="hljs-keyword">const</span> app = <span class="hljs-title function_">createApp</span>(<span class="hljs-title class_">App</span>)<br><span class="hljs-keyword">const</span> bus = <span class="hljs-title function_">mitt</span>()<br>app.<span class="hljs-property">config</span>.<span class="hljs-property">globalProperties</span>.<span class="hljs-property">$bus</span> = bus<br></code></pre></td></tr></table></figure>
-
-<p>在组件内使用</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">import</span> &#123; getCurrentInstance &#125; <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;vue&#x27;</span><br><span class="hljs-keyword">const</span> cxt  = <span class="hljs-title function_">getCurrentInstance</span>() <span class="hljs-comment">//相当于Vue2中的this</span><br>   <span class="hljs-keyword">const</span> bus = cxt.<span class="hljs-property">appContext</span>.<span class="hljs-property">config</span>.<span class="hljs-property">globalProperties</span>.<span class="hljs-property">$bus</span><br>   <span class="hljs-keyword">const</span> emitMitt = <span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)&#123;<br>       bus.<span class="hljs-title function_">emit</span>(<span class="hljs-string">&#x27;printMessage&#x27;</span>,<span class="hljs-string">&#x27;我被触发了&#x27;</span>)   <span class="hljs-comment">//触发其他组件监听的名为printMessage的事件</span><br>   &#125;<br></code></pre></td></tr></table></figure>
-
-<h4 id="局部引入（推荐）"><a href="#局部引入（推荐）" class="headerlink" title="局部引入（推荐）"></a>局部引入（推荐）</h4><p>在src目录内定义一个js文件（在这里是bus.js）</p>
-<p>在bus.js文件中</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">import</span> mitt <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;mitt&#x27;</span><br><span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> events = <span class="hljs-title function_">mitt</span>()<br></code></pre></td></tr></table></figure>
-
-<p>在使用的组件内</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs js"><br><span class="hljs-keyword">import</span> &#123;events&#125; <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;../../bus.js&#x27;</span>  <span class="hljs-comment">//引入bus.js文件</span><br><br><span class="hljs-comment">//在setup中</span><br><span class="hljs-keyword">let</span> <span class="hljs-title function_">clikmenu</span>=(<span class="hljs-params">e</span>)=&gt;&#123;<br>  events.<span class="hljs-title function_">emit</span>(<span class="hljs-string">&quot;clikmenu&quot;</span>,e)  <span class="hljs-comment">//可以直接使用</span><br>&#125;<br></code></pre></td></tr></table></figure>
-
-<h2 id="主要使用的三种方法"><a href="#主要使用的三种方法" class="headerlink" title="主要使用的三种方法"></a>主要使用的三种方法</h2><p> 分别是<code>emit</code>，<code>on</code>，<code>off</code></p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-comment">//三种方法的主要结构分别是</span><br><span class="hljs-title function_">emit</span>(name,data)  <span class="hljs-comment">// 触发相应事件  name:触发事件的名字   data:传递过去的参数</span><br><span class="hljs-title function_">on</span>(name,callback)  <span class="hljs-comment">//绑定相应的事件等待emit的触发   name:触发事件的名字   callback:出发后执行回调函数</span><br><span class="hljs-title function_">off</span>(name) <span class="hljs-comment">//解绑相应事件   name:需要解绑的事件名</span><br></code></pre></td></tr></table></figure>
-
-<p><strong>注意：必须保证先绑定事件再触发事件</strong></p>
-<p><strong>以下示例</strong></p>
-<p><strong>在layout组件中</strong></p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">import</span> &#123;events&#125; <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;../../bus.js&#x27;</span> <br><br><span class="hljs-comment">//在setup中</span><br><span class="hljs-title function_">onMounted</span>(<span class="hljs-function">()=&gt;</span>&#123;<br>events.<span class="hljs-title function_">on</span>(<span class="hljs-string">&quot;clikmenu&quot;</span>,<span class="hljs-function">(<span class="hljs-params">e</span>)=&gt;</span>&#123;<br><span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(e)<br>&#125;)<br>&#125;)<br><br><br><span class="hljs-title function_">onBeforeUnmount</span>(<span class="hljs-function">()=&gt;</span>&#123;<br>        events.<span class="hljs-title function_">off</span>(<span class="hljs-string">&#x27;clikmenu&#x27;</span>)<br>    &#125;)<br></code></pre></td></tr></table></figure>
-
-<p>在aside.vue组件中</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs js"> &lt;el-menu-item @click=<span class="hljs-string">&quot;clikm(item)&quot;</span>  v-<span class="hljs-keyword">else</span> :key=<span class="hljs-string">&quot;index + item.id&quot;</span> :index=<span class="hljs-string">&quot;item.id&quot;</span>&gt;<br> <br><span class="hljs-keyword">import</span> &#123;events&#125; <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;../../bus.js&#x27;</span><br><span class="hljs-comment">//setup中</span><br><span class="hljs-keyword">let</span> <span class="hljs-title function_">clikm</span>=(<span class="hljs-params">e</span>)=&gt;&#123;<br>  events.<span class="hljs-title function_">emit</span>(<span class="hljs-string">&quot;clikmenu&quot;</span>,e)<br>&#125;<br></code></pre></td></tr></table></figure>
-
-<p>当在aside.vue组件执行点击函数clikm就会触发layout.vue中的onMounted中绑定好的事件的回调函数</p>
+                <h1 id="mysql基础函数"><a href="#mysql基础函数" class="headerlink" title="mysql基础函数"></a>mysql基础函数</h1><h2 id="字符串函数"><a href="#字符串函数" class="headerlink" title="字符串函数"></a>字符串函数</h2><p><img src="https://s2.loli.net/2023/04/05/KqsLbmhOlB7vpHt.png" srcset="/img/loading.gif" lazyload alt="image.png"></p>
+<p>​              <u>lpad对于int类型的数据不起效果因为int不显示前面的零</u></p>
+<h2 id="数组函数"><a href="#数组函数" class="headerlink" title="数组函数"></a>数组函数</h2><p><img src="https://s2.loli.net/2023/04/05/EmA48zUTyrwODsS.png" srcset="/img/loading.gif" lazyload alt="image.png"></p>
+<p><img src="https://s2.loli.net/2023/04/05/Zi2QG1t5EUmYcsO.png" srcset="/img/loading.gif" lazyload alt="image.png"></p>
+<p>mod是取余的意思</p>
+<h2 id="日期函数"><a href="#日期函数" class="headerlink" title="日期函数"></a>日期函数</h2><p><img src="https://s2.loli.net/2023/04/05/YmQq6HKJa95vIVF.png" srcset="/img/loading.gif" lazyload alt="image.png"></p>
+<p>比如</p>
+<p><code>select date_add(now(),interval 70 day)</code></p>
+<h2 id="约束"><a href="#约束" class="headerlink" title="约束"></a>约束</h2><h3 id="普通约束"><a href="#普通约束" class="headerlink" title="普通约束"></a>普通约束</h3><p><img src="https://s2.loli.net/2023/04/05/qUXdzQtPxpf7SVi.png" srcset="/img/loading.gif" lazyload alt="image.png"></p>
+<p>age int check(age&gt;0&amp;&amp;age&lt;&#x3D;120)   check这个约束是这样用，代表年龄在0到120</p>
+<p>status char(1) default’1’    代表如果不设置status这个值，默认为 1</p>
+<p>id int primary key auto_increment  代表自动增长而且在这一行数据中唯一，与unique不同，unique是在这一个字段中唯一</p>
+<p>name varchar(20) not null unique 代表唯一而且不能为空</p>
+<h3 id="外键约束"><a href="#外键约束" class="headerlink" title="外键约束"></a>外键约束</h3><h4 id="添加外键"><a href="#添加外键" class="headerlink" title="添加外键"></a>添加外键</h4><p><img src="https://s2.loli.net/2023/04/05/V6aMr7zxCnkFUJi.png" srcset="/img/loading.gif" lazyload alt="image.png"></p>
+<h4 id="删除外键"><a href="#删除外键" class="headerlink" title="删除外键"></a>删除外键</h4><p>alter table 表名 drop foreign key 外键名称</p>
+<h4 id="更新-x2F-删除时相应的父子表关系"><a href="#更新-x2F-删除时相应的父子表关系" class="headerlink" title="更新&#x2F;删除时相应的父子表关系"></a>更新&#x2F;删除时相应的父子表关系</h4><p><img src="https://s2.loli.net/2023/04/05/kWhvLiSuJ5aq6dI.png" srcset="/img/loading.gif" lazyload alt="image.png"></p>
+<p>运用的语法</p>
+<p><img src="https://s2.loli.net/2023/04/05/v34qLnGjWe8YySw.png" srcset="/img/loading.gif" lazyload alt="image.png"></p>
+<p>这个代表更新时候遵守的规则和删除时遵守的规则</p>
+<h2 id="多表查询"><a href="#多表查询" class="headerlink" title="多表查询"></a>多表查询</h2><h3 id="内连接"><a href="#内连接" class="headerlink" title="内连接"></a>内连接</h3><p>对查询结果去重只需要在select后加入distinct 比如</p>
+<p><img src="https://s2.loli.net/2023/04/05/cIpbLHVgRmxJX3n.png" srcset="/img/loading.gif" lazyload alt="image.png"></p>
+<h4 id="隐式内连接"><a href="#隐式内连接" class="headerlink" title="隐式内连接"></a>隐式内连接</h4><p><code>select emp.name, dept.name from emp ,dept where epm.dept_id=dept.id;</code></p>
+<p>以上是查询两张表的员工名字和部门名字的代码</p>
+<h4 id="显式内连接"><a href="#显式内连接" class="headerlink" title="显式内连接"></a>显式内连接</h4><p><code>select e,name,d.name from emp e join dept d on e.dept_id=d.id</code></p>
+<p>还有另一种形式 inner可以省略</p>
+<p><code>select e,name,d.name drom emp e join dept d on e.dept_id=d.id</code></p>
+<h3 id="外连接"><a href="#外连接" class="headerlink" title="外连接"></a>外连接</h3><h4 id="左外连接"><a href="#左外连接" class="headerlink" title="左外连接"></a>左外连接</h4><p>会查询到左边这个表的全部信息纵使它不符合条件</p>
+<p><img src="https://s2.loli.net/2023/04/05/kz58dG2FrqweZxM.png" srcset="/img/loading.gif" lazyload alt="image.png"></p>
+<h4 id="右外连接"><a href="#右外连接" class="headerlink" title="右外连接"></a>右外连接</h4><p>同理</p>
+<p><img src="https://s2.loli.net/2023/04/05/odPzfsupJQ3DWHA.png" srcset="/img/loading.gif" lazyload alt="image.png"></p>
+<h3 id="自连接"><a href="#自连接" class="headerlink" title="自连接"></a>自连接</h3><p>自连接的作用，比如下面 managerid代表了直属领导，当我们要查询每个人的领导时，需要用到自查询</p>
+<p><img src="https://s2.loli.net/2023/04/05/gsqDZlzCtnrdIiu.png" srcset="/img/loading.gif" lazyload alt="image.png"></p>
+<p><img src="https://s2.loli.net/2023/04/05/ShvzUH3EW2FrDiO.png" srcset="/img/loading.gif" lazyload alt="image.png"></p>
+<p>把它看成两张表更好理解,如果想要查询没有领导也可以查询出来，可以用左查询</p>
+<h3 id="内连接和外连接的区别"><a href="#内连接和外连接的区别" class="headerlink" title="内连接和外连接的区别"></a>内连接和外连接的区别</h3><p>left join （左连接）：返回包括左表中的所有记录和右表中连接字段相等的记录。. right join （右连接）：返回包括右表中的所有记录和左表中连接字段相等的记录。. inner join （等值连接或者叫内连接）：只返回两个表中连接字段相等的行。</p>
+<h2 id="子查询"><a href="#子查询" class="headerlink" title="子查询"></a>子查询</h2><p><img src="https://s2.loli.net/2023/04/05/7HsJfgApSUK6Cvi.png" srcset="/img/loading.gif" lazyload alt="image.png"></p>
+<h3 id="列子查询"><a href="#列子查询" class="headerlink" title="列子查询"></a>列子查询</h3><p><img src="https://s2.loli.net/2023/04/05/CuxB7XNvEA3r6Fs.png" srcset="/img/loading.gif" lazyload alt="image.png"></p>
+<p><code>select id from dept where name=&#39;销售部&#39;or name=&#39;市场部&#39;</code></p>
+<p>查询市场部和销售部的所有员工的id</p>
+<p><code>select * from emp where dept_id in (select id from dept where name=&#39;销售部&#39;or name=&#39;市场部&#39;</code>) &#96;</p>
+<h3 id="行子查询"><a href="#行子查询" class="headerlink" title="行子查询"></a>行子查询</h3><p>还有这种表现形式，行子查询</p>
+<p><code>select * from emp where (salary,managerid)=(12500,3)</code></p>
+<p><img src="https://s2.loli.net/2023/04/05/T19CxdDNGbqhXZW.png" srcset="/img/loading.gif" lazyload alt="image.png"></p>
+<h3 id="表子查询"><a href="#表子查询" class="headerlink" title="表子查询"></a>表子查询</h3><p><img src="https://s2.loli.net/2023/04/05/A1U8iOgaBEY5Nxz.png" srcset="/img/loading.gif" lazyload alt="image.png"></p>
+<p>还可以把查询返回的数据当成一张表</p>
+<h1 id="事务"><a href="#事务" class="headerlink" title="事务"></a>事务</h1><h2 id="查看事务"><a href="#查看事务" class="headerlink" title="查看事务"></a>查看事务</h2><p>select @@autocommit</p>
+<p>自动提交为1，手动提交为0</p>
+<h2 id="更改事务"><a href="#更改事务" class="headerlink" title="更改事务"></a>更改事务</h2><p>set @@autocommit&#x3D;0</p>
+<h2 id="提交事务"><a href="#提交事务" class="headerlink" title="提交事务"></a>提交事务</h2><p>commit</p>
+<h2 id="回滚事务"><a href="#回滚事务" class="headerlink" title="回滚事务"></a>回滚事务</h2><p>当发生错误时，就需要回滚事务</p>
+<p>rollback；</p>
+<p>还有另一种方式运用事务</p>
+<h2 id="开启事务"><a href="#开启事务" class="headerlink" title="开启事务"></a>开启事务</h2><p>start transaction或者 begin</p>
+<p>其余不变</p>
+<h2 id="事务隔离"><a href="#事务隔离" class="headerlink" title="事务隔离"></a>事务隔离</h2><p>查看事务隔离级别</p>
+<p><img src="/mysql%E7%9A%84%E5%9F%BA%E7%A1%80%E5%87%BD%E6%95%B0.assets/image-20230405124449153.png" srcset="/img/loading.gif" lazyload alt="image-20230405124449153"></p>
+<p><img src="https://s2.loli.net/2023/04/05/CyQrwIN5jnGhpA8.png" srcset="/img/loading.gif" lazyload alt="image.png"></p>
+<h2 id="查看事务进程"><a href="#查看事务进程" class="headerlink" title="查看事务进程"></a>查看事务进程</h2><p>SELECT * FROM information_schema.INNODB_TRX</p>
 
                 
               </div>
@@ -315,7 +359,7 @@
     
       <span class="category-chain">
         
-  <a href="/categories/web/" class="category-chain-item">web</a>
+  <a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/" class="category-chain-item">数据库</a>
   
   
 
@@ -330,7 +374,7 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/vue/">#vue</a>
+        <a href="/tags/mysql/">#mysql</a>
       
     </div>
   
@@ -342,8 +386,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>vue3-全局事件的使用</div>
-      <div>http://move-brain.github.io/super_zhu/2023/04/04/vue3-全局事件的使用/</div>
+      <div>mysql的基础函数</div>
+      <div>http://move-brain.github.io/super_zhu/2023/04/05/mysql的基础函数/</div>
     </div>
     <div class="license-meta">
       
@@ -355,13 +399,13 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2023年4月4日</div>
+          <div>2023年4月5日</div>
         </div>
       
       
         <div class="license-meta-item license-meta-date">
           <div>更新于</div>
-          <div>2023年4月4日</div>
+          <div>2023年4月5日</div>
         </div>
       
       
@@ -392,18 +436,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/super_zhu/2023/04/05/mysql%E7%9A%84%E5%9F%BA%E7%A1%80%E5%87%BD%E6%95%B0/" title="mysql的基础函数">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">mysql的基础函数</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/super_zhu/2023/03/29/vue3%E4%BF%AE%E6%94%B9%E7%AC%AC%E4%B8%89%E6%96%B9ui%E7%BB%84%E4%BB%B6%E5%A4%B1%E6%95%88/" title="vue3修改第三方ui组件或者其他样式不生效">
-                        <span class="hidden-mobile">vue3修改第三方ui组件或者其他样式不生效</span>
+                      <a href="/super_zhu/2023/04/04/vue3-%E5%85%A8%E5%B1%80%E4%BA%8B%E4%BB%B6%E7%9A%84%E4%BD%BF%E7%94%A8/" title="vue3-全局事件的使用">
+                        <span class="hidden-mobile">vue3-全局事件的使用</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
