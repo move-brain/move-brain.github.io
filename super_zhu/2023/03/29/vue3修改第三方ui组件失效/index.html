@@ -7,20 +7,20 @@
 
 <head>
   <meta charset="UTF-8">
-  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
-  <link rel="icon" href="/img/fluid.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="https://w.wallhaven.cc/full/rr/wallhaven-rrg5rj.png">
+  <link rel="icon" href="https://w.wallhaven.cc/full/rr/wallhaven-rrg5rj.png">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   
   <meta name="theme-color" content="#2f4154">
   <meta name="author" content="super_zhu">
-  <meta name="keywords" content="">
+  <meta name="keywords" content="vue,ubuntu,mysql">
   
     <meta name="description" content="关于vue在添加scoped后修改第三方ui组件或者其他样式不生效废话最近一个项目，因为vue的实际开发经验少，一直修改el-table样式失效，苦苦找不到原因折磨死我了，啊啊啊啊啊！！！最后多方查找才找到其原因，痛煞老 原因我们常常在组件中加入scoped来防止组件间的样式污染，而scoped就是罪魁祸首，我们先说scoped的原理 scoped的原理在组件添加了scoped后发生的变化 vue">
 <meta property="og:type" content="article">
 <meta property="og:title" content="vue3修改第三方ui组件或者其他样式不生效">
 <meta property="og:url" content="http://move-brain.github.io/super_zhu/2023/03/29/vue3%E4%BF%AE%E6%94%B9%E7%AC%AC%E4%B8%89%E6%96%B9ui%E7%BB%84%E4%BB%B6%E5%A4%B1%E6%95%88/index.html">
-<meta property="og:site_name" content="zhu_brain">
+<meta property="og:site_name" content="blogs">
 <meta property="og:description" content="关于vue在添加scoped后修改第三方ui组件或者其他样式不生效废话最近一个项目，因为vue的实际开发经验少，一直修改el-table样式失效，苦苦找不到原因折磨死我了，啊啊啊啊啊！！！最后多方查找才找到其原因，痛煞老 原因我们常常在组件中加入scoped来防止组件间的样式污染，而scoped就是罪魁祸首，我们先说scoped的原理 scoped的原理在组件添加了scoped后发生的变化 vue">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://s2.loli.net/2023/03/29/XdPCfvgcytnZ1p7.png">
@@ -40,7 +40,7 @@
     <meta name="referrer" content="no-referrer-when-downgrade">
   
   
-  <title>vue3修改第三方ui组件或者其他样式不生效 - zhu_brain</title>
+  <title>vue3修改第三方ui组件或者其他样式不生效 - blogs</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -78,7 +78,7 @@
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
     Fluid.ctx = Object.assign({}, Fluid.ctx)
-    var CONFIG = {"hostname":"move-brain.github.io","root":"/","version":"1.9.3","typing":{"enable":true,"typeSpeed":50,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+    var CONFIG = {"hostname":"move-brain.github.io","root":"/","version":"1.9.3","typing":{"enable":true,"typeSpeed":50,"cursorChar":"_","loop":true,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
 
     if (CONFIG.web_analytics.follow_dnt) {
       var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
@@ -161,18 +161,6 @@
               <a class="nav-link" href="/tags/">
                 <i class="iconfont icon-tags-fill"></i>
                 标签
-              </a>
-            </li>
-          
-        
-          
-          
-          
-          
-            <li class="nav-item">
-              <a class="nav-link" href="/about/">
-                <i class="iconfont icon-user-fill"></i>
-                关于
               </a>
             </li>
           
@@ -383,6 +371,11 @@
         </div>
       
       
+        <div class="license-meta-item license-meta-date">
+          <div>更新于</div>
+          <div>2023年3月30日</div>
+        </div>
+      
       
         <div class="license-meta-item">
           <div>许可协议</div>
@@ -522,7 +515,7 @@
     <div class="footer-inner">
   
     <div class="footer-content">
-       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+       <a href="https://github.com/move-brain" target="_blank" rel="nofollow noopener"><span>my_github</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
     </div>
   
   
