@@ -25,7 +25,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://s2.loli.net/2023/04/22/BYveh31b4JOLRFD.png">
 <meta property="article:published_time" content="2023-04-21T09:53:01.789Z">
-<meta property="article:modified_time" content="2023-04-22T03:20:00.492Z">
+<meta property="article:modified_time" content="2023-04-22T03:23:14.832Z">
 <meta property="article:author" content="super_zhu">
 <meta property="article:tag" content="vue">
 <meta name="twitter:card" content="summary_large_image">
@@ -282,7 +282,7 @@
 <p>就是根据我们的配置node中间件会转发给相应的目标地址，这样子就很好的解决了跨域问题</p>
 <p>但是或许又有人问,为什么对node中间件发起请求没有跨域问题，那是因为不是在浏览器环境而是在node环境，所以就没有这种限制</p>
 <p>所以我们在上面说到</p>
-<p><strong>在vite.config.js中配置好后，我们在发起请求是baseurl应该是配置时的关键字（上面是&#x2F;api）或者是vite服务器的地址，因为我们需要向node中间件发起请求，后它根据配置代为转发，实现解决跨域这一操作</strong></p>
+<p><strong>在vite.config.js中配置好后，我们在发起请求是baseurl应该是配置时的关键字（上面是&#x2F;api）或者是vite服务器的地址加上关键字（<a target="_blank" rel="noopener" href="http://localhost:8080/api%EF%BC%89%EF%BC%8C%E5%9B%A0%E4%B8%BA%E6%88%91%E4%BB%AC%E9%9C%80%E8%A6%81%E5%90%91node%E4%B8%AD%E9%97%B4%E4%BB%B6%E5%8F%91%E8%B5%B7%E8%AF%B7%E6%B1%82%EF%BC%8C%E5%90%8E%E5%AE%83%E6%A0%B9%E6%8D%AE%E9%85%8D%E7%BD%AE%E4%BB%A3%E4%B8%BA%E8%BD%AC%E5%8F%91%EF%BC%8C%E5%AE%9E%E7%8E%B0%E8%A7%A3%E5%86%B3%E8%B7%A8%E5%9F%9F%E8%BF%99%E4%B8%80%E6%93%8D%E4%BD%9C">http://localhost:8080/api），因为我们需要向node中间件发起请求，后它根据配置代为转发，实现解决跨域这一操作</a></strong></p>
 
                 
               </div>
