@@ -4,6 +4,44 @@
   
   
   <entry>
+    <title>解决vite+vue3的跨域问题及其proxy原理</title>
+    <link href="/super_zhu/2023/04/21/%E8%A7%A3%E5%86%B3vite+vue3%E4%B8%AD%E8%B7%A8%E5%9F%9F%E9%97%AE%E9%A2%98/"/>
+    <url>/super_zhu/2023/04/21/%E8%A7%A3%E5%86%B3vite+vue3%E4%B8%AD%E8%B7%A8%E5%9F%9F%E9%97%AE%E9%A2%98/</url>
+    
+    <content type="html"><![CDATA[<h1 id="解决vite-vue3中跨域问题"><a href="#解决vite-vue3中跨域问题" class="headerlink" title="解决vite+vue3中跨域问题"></a>解决vite+vue3中跨域问题</h1><h2 id="代理配置"><a href="#代理配置" class="headerlink" title="代理配置"></a>代理配置</h2><p>首先打开你的<code>vite.config.js</code>文件</p><p>修改如下配置</p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-title function_">defineConfig</span>(&#123;<br>    <span class="hljs-attr">plugins</span>: [<span class="hljs-title function_">vue</span>()],<br>        <span class="hljs-attr">server</span>: &#123;<br>           <span class="hljs-attr">hmr</span>:<span class="hljs-literal">true</span>,     <span class="hljs-comment">//启动热更新，就是更改了代码自动刷新页面</span><br>           <span class="hljs-attr">port</span>: <span class="hljs-number">8082</span>,    <span class="hljs-comment">//自定义启动时的端口</span><br>           <span class="hljs-attr">open</span>: <span class="hljs-literal">true</span>,   <span class="hljs-comment">//代表vite项目在启动时自动打开浏览器 </span><br>           <span class="hljs-attr">proxy</span>:&#123;<br>            <span class="hljs-string">&quot;/api&quot;</span>: &#123; <br>                   <span class="hljs-attr">target</span>: <span class="hljs-string">&quot;http://xxx.xxx.xx.x:8080&quot;</span>,<br>                <span class="hljs-comment">//你的需要请求的服务器地址</span><br>                   <span class="hljs-attr">changeOrigin</span>: <span class="hljs-literal">true</span>, <span class="hljs-comment">// 允许跨域</span><br>                 <span class="hljs-attr">secure</span>: <span class="hljs-literal">false</span>,  <span class="hljs-comment">//忽略安全证书   </span><br>                   <span class="hljs-attr">rewrite</span>: <span class="hljs-function">(<span class="hljs-params">path</span>) =&gt;</span> path.<span class="hljs-title function_">replace</span>(<span class="hljs-regexp">/^\/api/</span>, <span class="hljs-string">&#x27;&#x27;</span>), <span class="hljs-comment">// 重写路径把路径变成空字符,</span><br>            &#125;,<br>        &#125;,<br>    &#125;,<br></code></pre></td></tr></table></figure><p>当我需要请求的地址为<code>http://xxx.xxx.xx.x:8080/user/login</code>  则我们在vue里使用axios发起请求为</p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs js">axios.<span class="hljs-title function_">get</span>(<span class="hljs-string">&#x27;/api/user/login&#x27;</span>)  <span class="hljs-comment">//发送成功  记住不能在发请求的时候写上自己的目标请求地址，原因看下面proxy原理  也可以加上vite服务器地址</span><br></code></pre></td></tr></table></figure><h2 id="代理原理"><a href="#代理原理" class="headerlink" title="代理原理"></a>代理原理</h2><ul><li>众所周知，之所以会有跨域问题，是源于我们浏览器的”同源策略保护“机制，只要<strong>网络协议</strong>，<strong>域名</strong>，<strong>端口</strong>不一致都会触发，所以跨域在他们有其中一个不一样时就会产生</li><li>解决跨域问题有一个非常经典的方法，那就是使用node中间件进行代理，它也是今天我们<strong>proxy</strong>的原理</li><li>在 vite 启动的时候，创建了一个开发服务器，然后根据我们进行的开发服务器配置进行 node 中间件代理。</li></ul><p>可以看下面这个原理图</p><p><img src="https://s2.loli.net/2023/04/22/BYveh31b4JOLRFD.png"></p><p>就是根据我们的配置node中间件会转发给相应的目标地址，这样子就很好的解决了跨域问题</p><p>但是或许又有人问,为什么对node中间件发起请求没有跨域问题，那是因为不是在浏览器环境而是在node环境，所以就没有这种限制</p><p>所以我们在上面说到</p><p><strong>在vite.config.js中配置好后，我们在发起请求是baseurl应该是配置时的关键字（上面是&#x2F;api）或者是vite服务器的地址，因为我们需要向node中间件发起请求，后它根据配置代为转发，实现解决跨域这一操作</strong></p>]]></content>
+    
+    
+    <categories>
+      
+      <category>web</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>vue</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title></title>
+    <link href="/super_zhu/2023/04/12/git/"/>
+    <url>/super_zhu/2023/04/12/git/</url>
+    
+    <content type="html"><![CDATA[<h1 id="git"><a href="#git" class="headerlink" title="git"></a>git</h1><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs shell">echo &quot;# sdsds&quot; &gt;&gt; README.md<br>git init<br>git add README.md<br>git commit -m &quot;first commit&quot;<br>git branch -M main<br>git remote add origin git@github.com:move-brain/sdsds.git<br>git push -u origin main<br></code></pre></td></tr></table></figure>]]></content>
+    
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>mysql的基础函数</title>
     <link href="/super_zhu/2023/04/05/mysql%E7%9A%84%E5%9F%BA%E7%A1%80%E5%87%BD%E6%95%B0/"/>
     <url>/super_zhu/2023/04/05/mysql%E7%9A%84%E5%9F%BA%E7%A1%80%E5%87%BD%E6%95%B0/</url>

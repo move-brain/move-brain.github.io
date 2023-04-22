@@ -16,44 +16,26 @@
   <meta name="author" content="super_zhu">
   <meta name="keywords" content="vue,ubuntu,mysql">
   
-    <meta name="description" content="mysql基础函数字符串函数 ​              lpad对于int类型的数据不起效果因为int不显示前面的零 数组函数  mod是取余的意思 日期函数 比如 select date_add(now(),interval 70 day) 约束普通约束 age int check(age&gt;0&amp;&amp;age&lt;&#x3D;120)   check这个约束是这样用，代表年">
+    <meta name="description" content="解决vite+vue3中跨域问题代理配置首先打开你的vite.config.js文件 修改如下配置 12345678910111213141516export default defineConfig(&amp;#123;    plugins: [vue()],        server: &amp;#123;           hmr:true,     &#x2F;&#x2F;启动热更新，就是更改了代码自动刷新页面">
 <meta property="og:type" content="article">
-<meta property="og:title" content="mysql的基础函数">
-<meta property="og:url" content="http://move-brain.github.io/super_zhu/2023/04/05/mysql%E7%9A%84%E5%9F%BA%E7%A1%80%E5%87%BD%E6%95%B0/index.html">
+<meta property="og:title" content="解决vite+vue3的跨域问题及其proxy原理">
+<meta property="og:url" content="http://move-brain.github.io/super_zhu/2023/04/21/%E8%A7%A3%E5%86%B3vite+vue3%E4%B8%AD%E8%B7%A8%E5%9F%9F%E9%97%AE%E9%A2%98/index.html">
 <meta property="og:site_name" content="blogs">
-<meta property="og:description" content="mysql基础函数字符串函数 ​              lpad对于int类型的数据不起效果因为int不显示前面的零 数组函数  mod是取余的意思 日期函数 比如 select date_add(now(),interval 70 day) 约束普通约束 age int check(age&gt;0&amp;&amp;age&lt;&#x3D;120)   check这个约束是这样用，代表年">
+<meta property="og:description" content="解决vite+vue3中跨域问题代理配置首先打开你的vite.config.js文件 修改如下配置 12345678910111213141516export default defineConfig(&amp;#123;    plugins: [vue()],        server: &amp;#123;           hmr:true,     &#x2F;&#x2F;启动热更新，就是更改了代码自动刷新页面">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://s2.loli.net/2023/04/05/KqsLbmhOlB7vpHt.png">
-<meta property="og:image" content="https://s2.loli.net/2023/04/05/EmA48zUTyrwODsS.png">
-<meta property="og:image" content="https://s2.loli.net/2023/04/05/Zi2QG1t5EUmYcsO.png">
-<meta property="og:image" content="https://s2.loli.net/2023/04/05/YmQq6HKJa95vIVF.png">
-<meta property="og:image" content="https://s2.loli.net/2023/04/05/qUXdzQtPxpf7SVi.png">
-<meta property="og:image" content="https://s2.loli.net/2023/04/05/V6aMr7zxCnkFUJi.png">
-<meta property="og:image" content="https://s2.loli.net/2023/04/05/kWhvLiSuJ5aq6dI.png">
-<meta property="og:image" content="https://s2.loli.net/2023/04/05/v34qLnGjWe8YySw.png">
-<meta property="og:image" content="https://s2.loli.net/2023/04/05/cIpbLHVgRmxJX3n.png">
-<meta property="og:image" content="https://s2.loli.net/2023/04/05/kz58dG2FrqweZxM.png">
-<meta property="og:image" content="https://s2.loli.net/2023/04/05/odPzfsupJQ3DWHA.png">
-<meta property="og:image" content="https://s2.loli.net/2023/04/05/gsqDZlzCtnrdIiu.png">
-<meta property="og:image" content="https://s2.loli.net/2023/04/05/ShvzUH3EW2FrDiO.png">
-<meta property="og:image" content="https://s2.loli.net/2023/04/05/7HsJfgApSUK6Cvi.png">
-<meta property="og:image" content="https://s2.loli.net/2023/04/05/CuxB7XNvEA3r6Fs.png">
-<meta property="og:image" content="https://s2.loli.net/2023/04/05/T19CxdDNGbqhXZW.png">
-<meta property="og:image" content="https://s2.loli.net/2023/04/05/A1U8iOgaBEY5Nxz.png">
-<meta property="og:image" content="http://move-brain.github.io/mysql%E7%9A%84%E5%9F%BA%E7%A1%80%E5%87%BD%E6%95%B0.assets/image-20230405124449153.png">
-<meta property="og:image" content="https://s2.loli.net/2023/04/05/CyQrwIN5jnGhpA8.png">
-<meta property="article:published_time" content="2023-04-05T04:36:10.418Z">
-<meta property="article:modified_time" content="2023-04-05T04:47:25.500Z">
+<meta property="og:image" content="https://s2.loli.net/2023/04/22/BYveh31b4JOLRFD.png">
+<meta property="article:published_time" content="2023-04-21T09:53:01.789Z">
+<meta property="article:modified_time" content="2023-04-22T03:20:00.492Z">
 <meta property="article:author" content="super_zhu">
-<meta property="article:tag" content="mysql">
+<meta property="article:tag" content="vue">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://s2.loli.net/2023/04/05/KqsLbmhOlB7vpHt.png">
+<meta name="twitter:image" content="https://s2.loli.net/2023/04/22/BYveh31b4JOLRFD.png">
   
   
     <meta name="referrer" content="no-referrer-when-downgrade">
   
   
-  <title>mysql的基础函数 - blogs</title>
+  <title>解决vite+vue3的跨域问题及其proxy原理 - blogs</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -206,7 +188,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="mysql的基础函数"></span>
+            <span id="subtitle" data-typed-text="解决vite+vue3的跨域问题及其proxy原理"></span>
           
         </div>
 
@@ -217,8 +199,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2023-04-05 12:36" pubdate>
-          2023年4月5日 下午
+        <time datetime="2023-04-21 17:53" pubdate>
+          2023年4月21日 下午
         </time>
       </span>
     
@@ -229,7 +211,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          1.4k 字
+          1k 字
         
       </span>
     
@@ -240,7 +222,7 @@
         
         
         
-          12 分钟
+          9 分钟
         
       </span>
     
@@ -278,69 +260,29 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">mysql的基础函数</h1>
+            <h1 style="display: none">解决vite+vue3的跨域问题及其proxy原理</h1>
             
             
               <div class="markdown-body">
                 
-                <h1 id="mysql基础函数"><a href="#mysql基础函数" class="headerlink" title="mysql基础函数"></a>mysql基础函数</h1><h2 id="字符串函数"><a href="#字符串函数" class="headerlink" title="字符串函数"></a>字符串函数</h2><p><img src="https://s2.loli.net/2023/04/05/KqsLbmhOlB7vpHt.png" srcset="/img/loading.gif" lazyload alt="image.png"></p>
-<p>​              <u>lpad对于int类型的数据不起效果因为int不显示前面的零</u></p>
-<h2 id="数组函数"><a href="#数组函数" class="headerlink" title="数组函数"></a>数组函数</h2><p><img src="https://s2.loli.net/2023/04/05/EmA48zUTyrwODsS.png" srcset="/img/loading.gif" lazyload alt="image.png"></p>
-<p><img src="https://s2.loli.net/2023/04/05/Zi2QG1t5EUmYcsO.png" srcset="/img/loading.gif" lazyload alt="image.png"></p>
-<p>mod是取余的意思</p>
-<h2 id="日期函数"><a href="#日期函数" class="headerlink" title="日期函数"></a>日期函数</h2><p><img src="https://s2.loli.net/2023/04/05/YmQq6HKJa95vIVF.png" srcset="/img/loading.gif" lazyload alt="image.png"></p>
-<p>比如</p>
-<p><code>select date_add(now(),interval 70 day)</code></p>
-<h2 id="约束"><a href="#约束" class="headerlink" title="约束"></a>约束</h2><h3 id="普通约束"><a href="#普通约束" class="headerlink" title="普通约束"></a>普通约束</h3><p><img src="https://s2.loli.net/2023/04/05/qUXdzQtPxpf7SVi.png" srcset="/img/loading.gif" lazyload alt="image.png"></p>
-<p>age int check(age&gt;0&amp;&amp;age&lt;&#x3D;120)   check这个约束是这样用，代表年龄在0到120</p>
-<p>status char(1) default’1’    代表如果不设置status这个值，默认为 1</p>
-<p>id int primary key auto_increment  代表自动增长而且在这一行数据中唯一，与unique不同，unique是在这一个字段中唯一</p>
-<p>name varchar(20) not null unique 代表唯一而且不能为空</p>
-<h3 id="外键约束"><a href="#外键约束" class="headerlink" title="外键约束"></a>外键约束</h3><h4 id="添加外键"><a href="#添加外键" class="headerlink" title="添加外键"></a>添加外键</h4><p><img src="https://s2.loli.net/2023/04/05/V6aMr7zxCnkFUJi.png" srcset="/img/loading.gif" lazyload alt="image.png"></p>
-<h4 id="删除外键"><a href="#删除外键" class="headerlink" title="删除外键"></a>删除外键</h4><p>alter table 表名 drop foreign key 外键名称</p>
-<h4 id="更新-x2F-删除时相应的父子表关系"><a href="#更新-x2F-删除时相应的父子表关系" class="headerlink" title="更新&#x2F;删除时相应的父子表关系"></a>更新&#x2F;删除时相应的父子表关系</h4><p><img src="https://s2.loli.net/2023/04/05/kWhvLiSuJ5aq6dI.png" srcset="/img/loading.gif" lazyload alt="image.png"></p>
-<p>运用的语法</p>
-<p><img src="https://s2.loli.net/2023/04/05/v34qLnGjWe8YySw.png" srcset="/img/loading.gif" lazyload alt="image.png"></p>
-<p>这个代表更新时候遵守的规则和删除时遵守的规则</p>
-<h2 id="多表查询"><a href="#多表查询" class="headerlink" title="多表查询"></a>多表查询</h2><h3 id="内连接"><a href="#内连接" class="headerlink" title="内连接"></a>内连接</h3><p>对查询结果去重只需要在select后加入distinct 比如</p>
-<p><img src="https://s2.loli.net/2023/04/05/cIpbLHVgRmxJX3n.png" srcset="/img/loading.gif" lazyload alt="image.png"></p>
-<h4 id="隐式内连接"><a href="#隐式内连接" class="headerlink" title="隐式内连接"></a>隐式内连接</h4><p><code>select emp.name, dept.name from emp ,dept where epm.dept_id=dept.id;</code></p>
-<p>以上是查询两张表的员工名字和部门名字的代码</p>
-<h4 id="显式内连接"><a href="#显式内连接" class="headerlink" title="显式内连接"></a>显式内连接</h4><p><code>select e,name,d.name from emp e join dept d on e.dept_id=d.id</code></p>
-<p>还有另一种形式 inner可以省略</p>
-<p><code>select e,name,d.name drom emp e join dept d on e.dept_id=d.id</code></p>
-<h3 id="外连接"><a href="#外连接" class="headerlink" title="外连接"></a>外连接</h3><h4 id="左外连接"><a href="#左外连接" class="headerlink" title="左外连接"></a>左外连接</h4><p>会查询到左边这个表的全部信息纵使它不符合条件</p>
-<p><img src="https://s2.loli.net/2023/04/05/kz58dG2FrqweZxM.png" srcset="/img/loading.gif" lazyload alt="image.png"></p>
-<h4 id="右外连接"><a href="#右外连接" class="headerlink" title="右外连接"></a>右外连接</h4><p>同理</p>
-<p><img src="https://s2.loli.net/2023/04/05/odPzfsupJQ3DWHA.png" srcset="/img/loading.gif" lazyload alt="image.png"></p>
-<h3 id="自连接"><a href="#自连接" class="headerlink" title="自连接"></a>自连接</h3><p>自连接的作用，比如下面 managerid代表了直属领导，当我们要查询每个人的领导时，需要用到自查询</p>
-<p><img src="https://s2.loli.net/2023/04/05/gsqDZlzCtnrdIiu.png" srcset="/img/loading.gif" lazyload alt="image.png"></p>
-<p><img src="https://s2.loli.net/2023/04/05/ShvzUH3EW2FrDiO.png" srcset="/img/loading.gif" lazyload alt="image.png"></p>
-<p>把它看成两张表更好理解,如果想要查询没有领导也可以查询出来，可以用左查询</p>
-<h3 id="内连接和外连接的区别"><a href="#内连接和外连接的区别" class="headerlink" title="内连接和外连接的区别"></a>内连接和外连接的区别</h3><p>left join （左连接）：返回包括左表中的所有记录和右表中连接字段相等的记录。. right join （右连接）：返回包括右表中的所有记录和左表中连接字段相等的记录。. inner join （等值连接或者叫内连接）：只返回两个表中连接字段相等的行。</p>
-<h2 id="子查询"><a href="#子查询" class="headerlink" title="子查询"></a>子查询</h2><p><img src="https://s2.loli.net/2023/04/05/7HsJfgApSUK6Cvi.png" srcset="/img/loading.gif" lazyload alt="image.png"></p>
-<h3 id="列子查询"><a href="#列子查询" class="headerlink" title="列子查询"></a>列子查询</h3><p><img src="https://s2.loli.net/2023/04/05/CuxB7XNvEA3r6Fs.png" srcset="/img/loading.gif" lazyload alt="image.png"></p>
-<p><code>select id from dept where name=&#39;销售部&#39;or name=&#39;市场部&#39;</code></p>
-<p>查询市场部和销售部的所有员工的id</p>
-<p><code>select * from emp where dept_id in (select id from dept where name=&#39;销售部&#39;or name=&#39;市场部&#39;</code>) &#96;</p>
-<h3 id="行子查询"><a href="#行子查询" class="headerlink" title="行子查询"></a>行子查询</h3><p>还有这种表现形式，行子查询</p>
-<p><code>select * from emp where (salary,managerid)=(12500,3)</code></p>
-<p><img src="https://s2.loli.net/2023/04/05/T19CxdDNGbqhXZW.png" srcset="/img/loading.gif" lazyload alt="image.png"></p>
-<h3 id="表子查询"><a href="#表子查询" class="headerlink" title="表子查询"></a>表子查询</h3><p><img src="https://s2.loli.net/2023/04/05/A1U8iOgaBEY5Nxz.png" srcset="/img/loading.gif" lazyload alt="image.png"></p>
-<p>还可以把查询返回的数据当成一张表</p>
-<h1 id="事务"><a href="#事务" class="headerlink" title="事务"></a>事务</h1><h2 id="查看事务"><a href="#查看事务" class="headerlink" title="查看事务"></a>查看事务</h2><p>select @@autocommit</p>
-<p>自动提交为1，手动提交为0</p>
-<h2 id="更改事务"><a href="#更改事务" class="headerlink" title="更改事务"></a>更改事务</h2><p>set @@autocommit&#x3D;0</p>
-<h2 id="提交事务"><a href="#提交事务" class="headerlink" title="提交事务"></a>提交事务</h2><p>commit</p>
-<h2 id="回滚事务"><a href="#回滚事务" class="headerlink" title="回滚事务"></a>回滚事务</h2><p>当发生错误时，就需要回滚事务</p>
-<p>rollback；</p>
-<p>还有另一种方式运用事务</p>
-<h2 id="开启事务"><a href="#开启事务" class="headerlink" title="开启事务"></a>开启事务</h2><p>start transaction或者 begin</p>
-<p>其余不变</p>
-<h2 id="事务隔离"><a href="#事务隔离" class="headerlink" title="事务隔离"></a>事务隔离</h2><p>查看事务隔离级别</p>
-<p><img src="/mysql%E7%9A%84%E5%9F%BA%E7%A1%80%E5%87%BD%E6%95%B0.assets/image-20230405124449153.png" srcset="/img/loading.gif" lazyload alt="image-20230405124449153"></p>
-<p><img src="https://s2.loli.net/2023/04/05/CyQrwIN5jnGhpA8.png" srcset="/img/loading.gif" lazyload alt="image.png"></p>
-<h2 id="查看事务进程"><a href="#查看事务进程" class="headerlink" title="查看事务进程"></a>查看事务进程</h2><p>SELECT * FROM information_schema.INNODB_TRX</p>
+                <h1 id="解决vite-vue3中跨域问题"><a href="#解决vite-vue3中跨域问题" class="headerlink" title="解决vite+vue3中跨域问题"></a>解决vite+vue3中跨域问题</h1><h2 id="代理配置"><a href="#代理配置" class="headerlink" title="代理配置"></a>代理配置</h2><p>首先打开你的<code>vite.config.js</code>文件</p>
+<p>修改如下配置</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-title function_">defineConfig</span>(&#123;<br>    <span class="hljs-attr">plugins</span>: [<span class="hljs-title function_">vue</span>()],<br>        <span class="hljs-attr">server</span>: &#123;<br>           <span class="hljs-attr">hmr</span>:<span class="hljs-literal">true</span>,     <span class="hljs-comment">//启动热更新，就是更改了代码自动刷新页面</span><br>           <span class="hljs-attr">port</span>: <span class="hljs-number">8082</span>,    <span class="hljs-comment">//自定义启动时的端口</span><br>           <span class="hljs-attr">open</span>: <span class="hljs-literal">true</span>,   <span class="hljs-comment">//代表vite项目在启动时自动打开浏览器 </span><br>           <span class="hljs-attr">proxy</span>:&#123;<br>            <span class="hljs-string">&quot;/api&quot;</span>: &#123; <br>                   <span class="hljs-attr">target</span>: <span class="hljs-string">&quot;http://xxx.xxx.xx.x:8080&quot;</span>,<br>                <span class="hljs-comment">//你的需要请求的服务器地址</span><br>                   <span class="hljs-attr">changeOrigin</span>: <span class="hljs-literal">true</span>, <span class="hljs-comment">// 允许跨域</span><br>                 <span class="hljs-attr">secure</span>: <span class="hljs-literal">false</span>,  <span class="hljs-comment">//忽略安全证书   </span><br>                   <span class="hljs-attr">rewrite</span>: <span class="hljs-function">(<span class="hljs-params">path</span>) =&gt;</span> path.<span class="hljs-title function_">replace</span>(<span class="hljs-regexp">/^\/api/</span>, <span class="hljs-string">&#x27;&#x27;</span>), <span class="hljs-comment">// 重写路径把路径变成空字符,</span><br>            &#125;,<br>        &#125;,<br>    &#125;,<br></code></pre></td></tr></table></figure>
+
+<p>当我需要请求的地址为<code>http://xxx.xxx.xx.x:8080/user/login</code>  则我们在vue里使用axios发起请求为</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs js">axios.<span class="hljs-title function_">get</span>(<span class="hljs-string">&#x27;/api/user/login&#x27;</span>)  <span class="hljs-comment">//发送成功  记住不能在发请求的时候写上自己的目标请求地址，原因看下面proxy原理  也可以加上vite服务器地址</span><br></code></pre></td></tr></table></figure>
+
+<h2 id="代理原理"><a href="#代理原理" class="headerlink" title="代理原理"></a>代理原理</h2><ul>
+<li>众所周知，之所以会有跨域问题，是源于我们浏览器的”同源策略保护“机制，只要<strong>网络协议</strong>，<strong>域名</strong>，<strong>端口</strong>不一致都会触发，所以跨域在他们有其中一个不一样时就会产生</li>
+<li>解决跨域问题有一个非常经典的方法，那就是使用node中间件进行代理，它也是今天我们<strong>proxy</strong>的原理</li>
+<li>在 vite 启动的时候，创建了一个开发服务器，然后根据我们进行的开发服务器配置进行 node 中间件代理。</li>
+</ul>
+<p>可以看下面这个原理图</p>
+<p><img src="https://s2.loli.net/2023/04/22/BYveh31b4JOLRFD.png" srcset="/img/loading.gif" lazyload></p>
+<p>就是根据我们的配置node中间件会转发给相应的目标地址，这样子就很好的解决了跨域问题</p>
+<p>但是或许又有人问,为什么对node中间件发起请求没有跨域问题，那是因为不是在浏览器环境而是在node环境，所以就没有这种限制</p>
+<p>所以我们在上面说到</p>
+<p><strong>在vite.config.js中配置好后，我们在发起请求是baseurl应该是配置时的关键字（上面是&#x2F;api）或者是vite服务器的地址，因为我们需要向node中间件发起请求，后它根据配置代为转发，实现解决跨域这一操作</strong></p>
 
                 
               </div>
@@ -359,7 +301,7 @@
     
       <span class="category-chain">
         
-  <a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/" class="category-chain-item">数据库</a>
+  <a href="/categories/web/" class="category-chain-item">web</a>
   
   
 
@@ -374,7 +316,7 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/mysql/">#mysql</a>
+        <a href="/tags/vue/">#vue</a>
       
     </div>
   
@@ -386,8 +328,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>mysql的基础函数</div>
-      <div>http://move-brain.github.io/super_zhu/2023/04/05/mysql的基础函数/</div>
+      <div>解决vite+vue3的跨域问题及其proxy原理</div>
+      <div>http://move-brain.github.io/super_zhu/2023/04/21/解决vite+vue3中跨域问题/</div>
     </div>
     <div class="license-meta">
       
@@ -399,13 +341,13 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2023年4月5日</div>
+          <div>2023年4月21日</div>
         </div>
       
       
         <div class="license-meta-item license-meta-date">
           <div>更新于</div>
-          <div>2023年4月5日</div>
+          <div>2023年4月22日</div>
         </div>
       
       
@@ -436,18 +378,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/super_zhu/2023/04/12/git/" title="">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile"></span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/super_zhu/2023/04/04/vue3-%E5%85%A8%E5%B1%80%E4%BA%8B%E4%BB%B6%E7%9A%84%E4%BD%BF%E7%94%A8/" title="vue3-全局事件的使用">
-                        <span class="hidden-mobile">vue3-全局事件的使用</span>
+                      <a href="/super_zhu/2023/04/12/git/" title="">
+                        <span class="hidden-mobile"></span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
